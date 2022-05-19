@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.marcinmoskala.arcseekbar.ArcSeekBar
+        android:id="@+id/seekArc"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_margin="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:progress="100"
+        app:progressBackgroundColor="@color/sliderBack"
+        app:progressBackgroundWidth="20dp"
+        app:progressWidth="20dp"
+        app:roundEdges="true" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reItem2"
         android:layout_width="wrap_content"
@@ -23,7 +40,9 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/reItemTest"
-        app:layout_constraintEnd_toStartOf="@+id/reItemTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/reItemTest">
 
         <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
@@ -41,8 +60,7 @@
         android:contentDescription="@string/app_name"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/verticalSeekBarWrapper"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

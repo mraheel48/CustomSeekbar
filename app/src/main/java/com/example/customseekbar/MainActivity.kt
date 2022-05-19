@@ -1,9 +1,9 @@
 package com.example.customseekbar
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.SeekBar
+import androidx.appcompat.app.AppCompatActivity
 import com.example.customseekbar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val intArray = resources.getIntArray(R.array.progressGradientColors)
+        binding.seekArc.setProgressGradient(*intArray)
+
+        /*binding.seekArc.setSplitTrack(false);
+        binding.seekArc.getThumb().mutate().setAlpha(0);*/
 
         binding.reItemTest.adapter = reAdapter
         binding.reItem2.adapter = reAdapter
